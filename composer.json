@@ -1,0 +1,12 @@
+{
+    "name": "sethorama/html",
+    "authors": [
+        {
+            "name": "Seth Reece",
+            "email": "sethorama@bassplayer.st"
+        }
+    ],
+    "require": {
+        "wildbit/postmark-php": "^1.3"
+    }
+}
