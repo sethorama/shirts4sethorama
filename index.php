@@ -1,6 +1,8 @@
 <?php
 
 require_once("inc/config.php");
+include(ROOT_PATH . "inc/products.php");
+$recent = get_products_recent();
 
 $pageTitle = "Shirts 4 Mike";
 $section = "index";
@@ -22,21 +24,15 @@ include(ROOT_PATH . 'inc/header.php'); ?>
 		</div>
 
 		<div class="section shirts latest">
-			<?php include(ROOT_PATH . "inc/products.php"); ?>
 			<div class="wrapper">
 
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 				
 				<ul class="products">
 				<?php
-					$total_products = count($products);
-					$position = 0;
 					$list_view_html = "";
-					foreach($products as $product) {
-						$position = $position + 1;
-						if($total_products - $position < 4) {
-							$list_view_html = get_list_view_html($product) . $list_view_html;
-						}
+					foreach($recent as $product) {
+						$list_view_html = get_list_view_html($product) . $list_view_html;
 					}
 					echo $list_view_html; 
 				?>											

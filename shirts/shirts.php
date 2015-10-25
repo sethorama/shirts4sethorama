@@ -1,6 +1,7 @@
 <?php 
 	require_once("../inc/config.php");
-	require_once(ROOT_PATH . "inc/products.php"); 
+	require_once(ROOT_PATH . "inc/products.php");
+	$products = get_products_all(); 
 ?>
 <?php 
 $pageTitle = "Shirts";
