@@ -43,6 +43,10 @@ function get_products_search($s) {
     return $results;
 }
 
+function get_products_count() {
+  return count(get_products_all());
+}
+
 function get_products_all() {
     $products = array();
     $products[101] = array(
