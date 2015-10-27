@@ -31,6 +31,11 @@ function get_products_recent() {
     return $recent;
 }
 
+/*
+ * Loops through all the products, looking for a search term in the product names
+ * @param: string  $s  the search term
+ * @return products that match search term 
+*/
 function get_products_search($s) {
     $results = array();
     $all = get_products_all();
@@ -45,6 +50,20 @@ function get_products_search($s) {
 
 function get_products_count() {
   return count(get_products_all());
+}
+
+function get_products_subset($positionStart, $positionEnd) {
+  $subset = array();
+  $all = get_products_all();
+
+  $position = 0;
+  foreach($all as $product) {
+    $position += 1;
+    if ($position >= $positionStart && $position <= $positionEnd) {
+        $subset[] = $product;
+      }
+  }
+  return $subset;
 }
 
 function get_products_all() {
